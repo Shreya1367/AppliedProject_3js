@@ -6,6 +6,9 @@ Here’s a sample GitHub README file for your Three.js animation project, tailor
 
 A 3D animation project created using [Three.js](https://threejs.org/) and developed in **Visual Studio Code**. This project demonstrates the use of Three.js to create dynamic, interactive 3D animations rendered in a web browser.
 
+## **Brief Introduction of the Project**
+
+It's a 3D animated movie created using threejs. I have named it "Legacy" beacause i've tried to create a learning legacy while working on this project. 
 ---
 
 ## **Features**
