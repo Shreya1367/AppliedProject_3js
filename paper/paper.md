@@ -43,19 +43,19 @@ The production pipeline followed these stages:
 The visual structure of the film was created using **Storyboarder**.
 
 **Figure 1: Storyboard – Part 1**  
-![Storyboard Part 1](figures/fig1.png)
+![Storyboard Part 1](figures/Storyboard1.png)
 
 **Figure 2: Storyboard – Part 2**  
-![Storyboard Part 2](figures/fig2.png)
+![Storyboard Part 2](figures/Storyboard2.png)
 
 ## 2. Modeling
 Characters and assets were modeled in **Blender**.
 
 **Figure 3: Main Character – Front View**  
-![Character Front](figures/fig3.png)
+![Character Front](figures/Fig3.png)
 
 **Figure 4: Main Character – Side View**  
-![Character Side](figures/fig4.png)
+![Character Side](figures/Fig4.png)
 
 ## 3. Texturing
 Textures were downloaded from **Poly Haven**, which provides free CC0-licensed texture libraries and HDRIs.
