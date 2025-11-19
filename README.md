@@ -144,6 +144,16 @@ To contribute:
 
 ---
 
+## **Where The Paper is Stored**
+The paper for this project is located at /paper/paper.md
+
+---
+
+## **LICENSE**
+This project is licensed under the MIT License.
+
+---
+
 ## **Contact**
 For any questions or feedback, feel free to reach out:
 - Email: shreyamish32@gmail.com
