@@ -9,94 +9,80 @@ affiliations:
   - name: Arizona State University
     index: 1
 date: "2025"
+bibliography: paper.bib
 ---
 
 # Summary
 
-This project presents the development of *Legacy*, a fully real-time 3D animated movie created using **Three.js**, **motion capture**, and **web technologies**. The goal was to produce a complete short animated film that requires **no offline rendering**, demonstrating how real-time rendering can reduce production time and allow the animation to run directly in a web browser.
+This project focuses on developing *Legacy*, a 3D animated movie created using motion capture and rendered entirely in real time through Three.js. The goal was to produce a film that could run directly in a web browser without long rendering times or heavy post-processing. The project also explores the transfer of human-recorded motion capture to a non-human, plant-like character—an approach that highlights the creative possibilities of mocap beyond traditional humanoid rigs.
 
-The project also explores the creative challenge of transferring **human motion capture** to a **non-human, plant-like character**, revealing how unconventional rigs can be animated effectively.
+In a time when demand for 3D animated films is rapidly increasing and tools like Maya and Blender dominate production pipelines, Three.js is emerging as an efficient alternative for real-time rendering. A number of visually impressive films, such as *The Aviator*, *Lights*, and *The Journey*, demonstrate its potential. Inspired by this shift, I chose Three.js to develop this film. The title *Legacy* reflects the learning legacy gained throughout the project.
 
-While many animated films depend on heavy offline rendering pipelines in Blender or Maya, *Legacy* demonstrates that **Three.js** can be a powerful alternative for individuals and students seeking a lightweight, fast, and accessible animation workflow.
+Creating expressive animation for unique, non-human characters can be challenging with traditional frame-by-frame workflows. This project shows how motion capture can produce fluid, emotional performances even for unconventional rigs. Beyond technical contributions, the film aims to mesmerize and emotionally motivate viewers, while demonstrating that accessible, browser-based pipelines can produce a complete 3D animated movie within a short time frame.
 
-# Statement of Need
+# Statement of need
 
-The traditional 3D film workflow includes long rendering times, complex export pipelines, and heavy reliance on high-performance hardware. Blender and Maya are strong tools for modeling and rigging, but rendering large scenes can take hours or days.
+The main objective of this project was to develop a motion-capture-driven 3D animated movie that runs directly in a web browser. Creating the entire film in Blender and then exporting for the web would have required significant rendering time, large file handling, and multiple conversion steps. Offline rendering tools like Blender and Maya are powerful, but they become slow and unstable when scenes grow large or when many animation files are involved.
 
-In contrast, **Three.js provides real-time rendering** with several advantages:
+Three.js offers an efficient alternative through real-time rendering and fast iteration. It requires no paid plugins, works across platforms, and is ideal for individuals who are comfortable with coding but overwhelmed by traditional 3D software complexity. Combining Blender for 3D modeling and rigging with Three.js for real-time playback created a simple and effective workflow.
 
-- Instant playback — no need to render frames
-- Fast iteration on visuals and animation
-- Can run on any device with a web browser
-- No licensing costs or plugins needed
-- Accessible for developers comfortable with JavaScript
-
-This project demonstrates that a visually compelling short film can be produced using a real-time rendering pipeline in just two months, making 3D animation more accessible to individuals and students without access to studio-level render farms.
-
-Additionally, the film’s narrative encourages environmental awareness, symbolized through its plant-like character, and offers an example of applying human mocap to a stylized, non-human rig.
+This project demonstrates how a complete 3D animated movie can be produced in under two months using a lightweight, real-time web-based pipeline. It also serves as an example for students and creators who want to explore Three.js for animation, especially those interested in transferring human mocap onto unique, non-human characters. Additionally, the movie carries an environmental message, encouraging viewers to plant more trees and recognize the urgency of environmental protection.
 
 # Process
 
-The production pipeline followed these stages:
+## Storyboarding
 
-## 1. Storyboarding
-The visual structure of the film was created using **Storyboarder**.
+The storyboarding was done using *Storyboarder*, where the full visual layout of the film was planned.
 
-**Figure 1: Storyboard – Part 1**  
+**Figure 1. Storyboard Part 1**  
 ![Storyboard Part 1](figures/Storyboard1.png)
 
-**Figure 2: Storyboard – Part 2**  
+**Figure 2. Storyboard Part 2**  
 ![Storyboard Part 2](figures/Storyboard2.png)
 
-## 2. Modeling
-Characters and assets were modeled in **Blender**.
+## Modeling
 
-**Figure 3: Main Character – Front View**  
+The 3D character and other assets were created using Blender, while additional environmental elements were sourced from online libraries.
+
+**Figure 3. Main Character – Front View**  
 ![Character Front](figures/Fig3.png)
 
-**Figure 4: Main Character – Side View**  
+**Figure 4. Main Character – Side View**  
 ![Character Side](figures/Fig4.png)
 
-## 3. Texturing
-Textures were downloaded from **Poly Haven**, which provides free CC0-licensed texture libraries and HDRIs.
+## Texturing
 
-## 4. Rigging
-The character was rigged using:
+Textures, PBR maps, and HDRIs were downloaded from Poly Haven, providing high-quality, CC0-licensed assets suitable for real-time rendering.
 
-- **Mixamo** for the body skeleton  
-- **FaceIt** for ARKit-compatible facial blendshapes  
+## Rigging
 
-## 5. Motion Capture Recording
-Motion capture was recorded using:
+The character’s body was rigged using Mixamo’s free rigging tool. Facial blendshapes compatible with ARKit were created using the FaceIt add-on, enabling facial motion capture using the Rokoko Face app.
 
-- Rokoko Face Capture (facial)
-- Rokoko Body Capture (full body)
-- Export formats: BVH for body, blendshapes for face
+## Motion Capture
 
-## 6. Retargeting and Refining Mocap
-The **Rokoko Add-on for Blender** was used to retarget and refine human motion capture onto the non-human character. Multiple motion capture sessions were combined and cleaned for expressive performance.
+Motion capture was recorded using Rokoko’s face and body capture tools:
 
-## 7. Importing into Three.js
-Assets were exported to **GLB** format and imported into Three.js. Tasks performed in Three.js included:
+- Body motion: captured via Rokoko SmartSuit and exported in BVH format  
+- Facial motion: captured via Rokoko Face Capture and exported as ARKit-compatible blendshapes  
 
-- Building scenes based on the storyboard
-- Setting up lighting
-- Animating cameras
-- Sequencing shots
-- Real-time rendering with `WebGLRenderer`
+## Retargeting and Refinement
 
-This formed the core of the real-time pipeline, allowing the entire film to be sequenced, played, and rendered instantly in a browser.
+The Rokoko add-on for Blender was used to retarget and refine the body and face mocap data onto the non-human character. Multiple mocap recordings were combined and refined to create expressive and natural animation.
 
-# Conclusion
+## Importing into Three.js
 
-*Legacy* demonstrates that **real-time rendering using Three.js** is a practical and efficient alternative to traditional 3D film production. Key conclusions include:
+All assets were exported from Blender as GLB files. Inside Three.js:
 
-- No final render time is required  
-- The film runs instantly in any web browser  
-- Blender remains valuable for modeling and mocap retargeting  
-- Three.js excels in fast playback and shot sequencing  
-- Human motion capture can drive stylized, non-human characters successfully  
+- Scenes were created according to storyboard references  
+- Lighting was handled using Three.js directional, ambient, and point lights  
+- Camera movements were programmed and sequenced  
+- Animations were synchronised and played using the Three.js animation mixer  
+- Real-time rendering was performed with `WebGLRenderer`  
 
-The full project, including assets, scenes, and the final film, is available on GitHub:
+All shot sequencing, timing, and transitions were created in Three.js, enabling the entire film to run directly inside a web browser without offline rendering.
 
-**[Insert your GitHub]()**
+# Acknowledgements
+
+Special thanks to Professor Tejaswi Gowda for support, guidance, and continuous feedback throughout the development of this project.
+
+# References
